@@ -154,10 +154,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.delete_all:
+/*            case R.id.delete_all:
                 Toast.makeText(this, "All items deleted", Toast.LENGTH_SHORT).show();
                 setUpRecyclerView();
-                return true;
+                return true;*/
             case R.id.logout_menu:
                 Logout();
                 return true;
@@ -291,21 +291,6 @@ public class MainActivity extends AppCompatActivity {
 
         return myQuittingDialogBox;
     }
-
-
-
-
-
- /*   @Override
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }*/
 
 
 
