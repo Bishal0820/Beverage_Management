@@ -425,8 +425,8 @@ public class AddUpdate extends AppCompatActivity {
         uploadTask.addOnCompleteListener(AddUpdate.this, new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                Log.i("MA", "Upload Task COmpleted");
-                Toast.makeText(AddUpdate.this, "Upload Task COmpleted" , Toast.LENGTH_SHORT).show();
+                Log.i("MA", "Upload Task Completed");
+                Toast.makeText(AddUpdate.this, "Upload Task Completed" , Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
                 progressBar.setEnabled(true);
 

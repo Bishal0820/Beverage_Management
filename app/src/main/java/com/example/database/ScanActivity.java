@@ -1,5 +1,6 @@
 package com.example.database;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,6 +9,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,6 +29,12 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Barcode Scanner");
+
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Adding the close button on the menu
+        this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+
         zXingScannerView = new ZXingScannerView(this);
         setContentView(zXingScannerView);
     }
@@ -58,5 +66,16 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         }
         zXingScannerView.setResultHandler(this);
         zXingScannerView.startCamera();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return false;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

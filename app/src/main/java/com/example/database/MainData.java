@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 import java.util.Date;
 
-
+@Entity
 public class MainData {
     //Create Primary Key column
 
